@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>portfolio</title>
+</head>
+<body>
+    <div class="title">
+        <img class="logo" src="title1.png" alt="">  
+    </div>
+
+    <div class="menu">
+        <div class="menu__background" id="menu__background">
+            <div class="background__image1"></div>
+            <div class="background__image2"></div>
+            <div class="background__image3"></div>
+            <div class="background__image4"></div>
+            <div class="background__image5"></div>
+        </div>
+        <div class="info">
+            <img class="menu__avt" src="avt.jpg" alt="">
+            <div class="name">NGUYỄN HẢI LINH</div>
+        </div>
+    </div>
+    <div class="control">
+        <li><a  class="select" href="index.html">Giới thiệu</a></li>
+        <li><a  class="select" href="album.html">Album</a></li>
+        <li><a  class="select" href="love.html">Yêu thích</a></li>
+        <li><a  class="select" href="lib.html">Thư viện</a></li>
+    <!-- mobile -->
+        <div class="nav-bar">
+            <label for="nav-control" class="nav__bar-btn">
+                <svg style="height: 28px; width: 28px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
+            </label>
+        </div>
+        <h3 class="menu__select">ALBUM</h3>
+    </div>
+    <input type="checkbox" hidden class="nav-input" id="nav-control">
+    <label for="nav-control" class="overlay"></label>
+    <div class="select-mobile">
+        <li><a  class="select-mobile-btn" href="index.html">Giới thiệu</a></li>
+        <li><a  class="select-mobile-btn" href="album.html">Album</a></li>
+        <li><a  class="select-mobile-btn" href="love.html">Yêu thích</a></li>
+        <li><a  class="select-mobile-btn" href="lib.html">Thư viện</a></li>
+    </div>
+
+    <div class="main">
+        <div class="intro">
+            <div class="intro__description-album">
+                    <div class="album-collection">
+                        <a href="photo.html" class="album"><div class="ao-dai"><div class="sub-overlay"><h3 class="album-name">Áo Dài</h3></div></div></a>
+                        <a href="photo.html" class="album"><div class="couple"><div class="sub-overlay"><h3 class="album-name">Couple</h3></div></div></a>
+                        <a href="photo.html" class="album"><div class="hoa-giay"><div class="sub-overlay"><h3 class="album-name">Hoa Giấy</h3></div></div></a>
+                        <a href="photo.html" class="album"><div class="bon-tam"><div class="sub-overlay"><h3 class="album-name">Bồn Tắm</h3></div></div></a>
+                        <a href="photo.html" class="album"><div class="thao-cam-vien"><div class="sub-overlay"><h3 class="album-name">Thảo Cầm Viên</h3></div></div></a>
+                        <a href="photo.html" class="album"><div class="dong-co"><div class="sub-overlay"><h3 class="album-name">Đồng Cỏ</h3></div></div></a>
+                    </div>
+
+                    
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+</body>
+<script>
+    var subOverlay = document.getElementsByClassName("sub-overlay");
+    var albumName = document.getElementsByClassName("album-name");
+    for(let i = 0;i<subOverlay.length;i++)
+    {
+        subOverlay[i].onmouseover = function(){
+            albumName[i].style.marginBottom = '40px';
+        }
+        subOverlay[i].onmouseout = function(){
+            albumName[i].style.marginBottom = '18.72px';
+        }
+    }
+</script>
+<script>
+    var overlay = document.getElementsByClassName("show_pic");
+    var picture = document.getElementsByClassName("pic");
+
+    for(let i = 0;i<overlay.length;i++)
+    {
+        overlay[i].href = picture[i].src;
+    }
+    for(let i = 0;i<overlay.length;i++)
+    {
+        if(picture[i].naturalWidth >=picture[i].naturalHeight)
+        {
+            overlay[i].style.width = '339px';
+            overlay[i].style.height = '227px';
+        }
+    }
+</script>
+<SCRipt>
+    var Link = document.getElementsByClassName("select");
+    var index = 1;
+    Link[index].style.color = 'black';
+    for(let i =0;i<Link.length;i++)
+    {
+        Link[i].onmouseover = function(){
+            Link[i].style.color = 'black';
+        }
+        Link[i].onmouseout = function(){
+            Link[i].style.color = 'rgb(139, 139, 139)';
+            Link[index].style.color = 'black';
+        }
+        Link[1].style.color = 'black';
+    }
+
+</SCRipt>
+<script>
+    let ind = 0;
+    var scoll = document.getElementById("menu__background");
+    console.log(scoll.style.width);
+    function ScollImg (){
+        ind++;
+        if(ind >=5){ind = 0;}
+        scoll.style.marginLeft = "-" + ind*100 +"%";
+    }
+    setInterval(ScollImg,3000);
+</script>
+</html>
